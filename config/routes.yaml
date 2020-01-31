@@ -1,0 +1,16 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+users:
+    path: /api/users
+    controller: App\Controller\UserController::getUsers
+
+register:
+    path: /api/register
+    controller: App\Controller\RegisterUserController::registerUser
+
+login:
+    path: /api/login
+    controller: App\Controller\LogginController::login
