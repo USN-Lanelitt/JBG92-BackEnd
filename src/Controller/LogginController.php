@@ -3,8 +3,6 @@
 
 namespace App\Controller;
 
-
-use App\Entity\User;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,8 +21,8 @@ class LogginController extends AbstractController{
     }
     public function login(Request $request) {
 
-
         $content = json_decode($request->getContent());
+
         $sUsername = $content->username;
         $sPassword = $content->password;
 

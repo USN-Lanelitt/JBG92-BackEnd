@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 
+use App\Entity\Individuals;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,9 +25,9 @@ class RegisterUserController extends AbstractController{
         $sUsername = $content->username;
         $sPassword = $content->password;
 
-        $user = new User();
-        $user->setName($sUsername);
-        $user->setPassword($sPassword);
+        $user = new Individuals();
+        $user->setFirstname($sUsername);
+        $user->setLastname($sPassword);
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($user);

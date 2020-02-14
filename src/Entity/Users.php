@@ -17,7 +17,7 @@ class Users
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\individuals", inversedBy="testUsers", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Individuals", inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
      */
     private $individ;
@@ -52,12 +52,12 @@ class Users
         return $this->id;
     }
 
-    public function getIndivid(): ?individuals
+    public function getIndivid(): ?Individuals
     {
         return $this->individ;
     }
 
-    public function setIndivid(individuals $individ): self
+    public function setIndivid(Individuals $individ): self
     {
         $this->individ = $individ;
 

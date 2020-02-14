@@ -17,7 +17,7 @@ class Assets
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\individuals", inversedBy="assets")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Individuals", inversedBy="assets")
      * @ORM\JoinColumn(nullable=false)
      */
     private $individ;
@@ -48,12 +48,12 @@ class Assets
         return $this->id;
     }
 
-    public function getIndivid(): ?individuals
+    public function getIndivid(): ?Individuals
     {
         return $this->individ;
     }
 
-    public function setIndivid(?individuals $individ): self
+    public function setIndivid(?Individuals $individ): self
     {
         $this->individ = $individ;
 
