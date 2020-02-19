@@ -7,6 +7,7 @@ namespace App\Controller;
 
 use App\Entity\Individuals;
 use App\Entity\User;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\DBAL\Driver\Connection;
@@ -26,11 +27,13 @@ class RegisterUserController extends AbstractController{
         $sPassword = $content->password;
 
         $user = new Individuals();
-        $user->setFirstname($sUsername);
-        $user->setLastname($sPassword);
+        $user->setFirstName($sUsername);
+        $user->setLastName($sPassword);
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($user);
         $entityManager->flush();
+
+        return new JsonResponse("Person lagd til");
     }
 }
